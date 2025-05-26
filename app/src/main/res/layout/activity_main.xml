@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="60dp">
+
+    <!-- Botones para elegir moneda -->
+
+    <Button
+        android:id="@+id/btnDolar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dólar" />
+
+    <Button
+        android:id="@+id/btnEuro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Euro" />
+
+    <Button
+        android:id="@+id/btnPesoMexicano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Peso Mexicano" />
+
+
+    <RadioGroup
+        android:id="@+id/rgConversion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbAColombianos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="A COP" />
+
+        <RadioButton
+            android:id="@+id/rbDesdeColombianos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desde COP" />
+    </RadioGroup>
+
+
+    <!-- Campo para ingresar monto -->
+    <EditText
+        android:id="@+id/etMonto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese monto"
+        android:inputType="numberDecimal" />
+
+    <!-- Campo para mostrar resultado en pesos colombianos -->
+    <EditText
+        android:id="@+id/etResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Resultado en:"
+        android:focusable="false"
+        android:clickable="false" />
+
+
+
+</LinearLayout>
