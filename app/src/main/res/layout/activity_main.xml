@@ -1,68 +1,120 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="60dp">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background_gradient">
 
-    <!-- Botones para elegir moneda -->
-
-    <Button
-        android:id="@+id/btnDolar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dólar" />
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/btnEuro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Euro" />
-
-    <Button
-        android:id="@+id/btnPesoMexicano"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Peso Mexicano" />
-
-
-    <RadioGroup
-        android:id="@+id/rgConversion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/rbAColombianos"
+        <!-- Título estilizado -->
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="A COP" />
+            android:text="Conversor de Moneda"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="24dp" />
 
-        <RadioButton
-            android:id="@+id/rbDesdeColombianos"
+        <!-- Tipo de conversión -->
+        <RadioGroup
+            android:id="@+id/rgConversion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Desde COP" />
-    </RadioGroup>
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbAColombianos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Monedas a COP"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/rbDesdeColombianos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COP a Monedas"
+                android:textColor="#000000"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+
+        <!-- Monto a convertir -->
+        <EditText
+            android:id="@+id/etMonto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese monto"
+            android:inputType="numberDecimal"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Botones -->
+        <Button
+            android:id="@+id/btnDolar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dólar (USD)"
+            android:background="@drawable/rounded_button_usd"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnEuro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Euro (EUR)"
+            android:background="@drawable/rounded_button_eur"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnPesoMexicano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peso Mexicano (MXN)"
+            android:background="@drawable/rounded_button_mxn"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Resultado -->
+        <EditText
+            android:id="@+id/etResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Resultado"
+            android:textStyle="bold"
+            android:textColor="#2C3E50"
+            android:background="@drawable/rounded_edittext"
+            android:focusable="false"
+            android:clickable="false"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Botón para actualizar -->
+        <Button
+            android:id="@+id/btnActualizarMonedas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Tasas de Cambio"
+            android:background="@drawable/rounded_button_actualizar"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+</ScrollView>
 
 
-    <!-- Campo para ingresar monto -->
-    <EditText
-        android:id="@+id/etMonto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingrese monto"
-        android:inputType="numberDecimal" />
-
-    <!-- Campo para mostrar resultado en pesos colombianos -->
-    <EditText
-        android:id="@+id/etResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Resultado en:"
-        android:focusable="false"
-        android:clickable="false" />
 
 
-
-</LinearLayout>

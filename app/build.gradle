@@ -6,9 +6,13 @@ android {
     namespace 'com.example.conversormoneda'
     compileSdk 35
 
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.conversormoneda"
-        minSdk 19
+        minSdk 21
         targetSdk 35
         versionCode 1
         versionName "1.0"
@@ -22,6 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -29,7 +34,6 @@ android {
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
